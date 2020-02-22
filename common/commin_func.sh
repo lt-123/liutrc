@@ -18,3 +18,11 @@ function retry() {
     fi
   done
 }
+
+
+
+################################ rm ######################################
+
+# 回收站文件夹
+export TRASH_PATH=~/.Trash
+source "${HOME}/.liut/common/rm.sh"

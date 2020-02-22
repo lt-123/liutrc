@@ -32,3 +32,6 @@ esac
 # shellcheck source=.liut/common/commin_func.sh
 source "${LIUT_RC_HOME}/common/commin_func.sh"
 
+# 通用(个人私有)
+# shellcheck source=.liut/common/private.sh
+source "${LIUT_RC_HOME}/common/private.sh"
