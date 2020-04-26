@@ -16,3 +16,13 @@ source "${HOME}/.liut/common/android.sh"
 
 # 打开文件夹
 alias open=explorer
+
+
+
+
+################################ rm ######################################
+
+# 回收站文件夹
+export TRASH_PATH=~/.Trash
+source "${HOME}/.liut/common/rm.sh"
+

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # 出错后停止
-set -e
+#set -e
 
 # 复制 liutrc 到
 

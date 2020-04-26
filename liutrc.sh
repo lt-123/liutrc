@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
 # 当前系统 Darwin（mac）
-uname=$(uname)
+if [ -z $uname ]; then
+  uname=$(uname)
+fi
 
 # mingw 特殊处理
 if [ $(echo "$uname" | grep 'MINGW') ]; then
@@ -18,7 +20,7 @@ case ${uname} in
   # shellcheck source=.liut/sys/darwin.sh
   source "${LIUT_RC_HOME}/sys/darwin.sh"
   ;;
-"linux")
+"Linux")
   # shellcheck source=.liut/sys/linux.sh
   source "${LIUT_RC_HOME}/sys/linux.sh"
   ;;
