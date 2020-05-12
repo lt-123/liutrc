@@ -1,6 +1,15 @@
 #!/usr/bin/env bash
 
 
+################################## flutter ####################################
+
+# 环境变量
+export PATH=$PATH:~/.flutter/bin
+
+# 清华源
+export FLUTTER_STORAGE_BASE_URL="https://mirrors.tuna.tsinghua.edu.cn/flutter"
+export PUB_HOSTED_URL="https://mirrors.tuna.tsinghua.edu.cn/dart-pub"
+
 ############################# jdk #########################################
 
 #添加JDK的环境变量
