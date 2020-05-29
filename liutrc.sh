@@ -1,21 +1,19 @@
 #!/usr/bin/env bash
 
-# 当前系统 Darwin（mac）
-if [ -z $uname ]; then
-  uname=$(uname)
-fi
+# 当前系统类型
+OS_TYPE=$(uname)
 
 # mingw 特殊处理
-if [ $(echo "$uname" | grep 'MINGW') ]; then
-  uname='MINGW'
+if [ $(echo "$OS_TYPE" | grep 'MINGW') ]; then
+  OS_TYPE='MINGW'
 fi
-readonly uname
-export uname
 
+# readonly OS_TYPE
+export OS_TYPE
 export LIUT_RC_HOME="${HOME}/.liut"
 
 # 系统相关
-case ${uname} in
+case ${OS_TYPE} in
 "Darwin")
   # shellcheck source=.liut/sys/darwin.sh
   source "${LIUT_RC_HOME}/sys/darwin.sh"
