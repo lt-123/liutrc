@@ -25,17 +25,18 @@ export ANDROID_HOME='/C/Users/admin/AppData/Local/Android/Sdk'
 # adb path
 # export PATH=$PATH:'$ANDROID_HOME/platform-tools'
 
+alias sdk="cd $ANDROID_HOME"
+
 # 安卓相关
 source "${HOME}/.liut/common/android.sh"
 
 ######################################################################
 
-
 # 打开文件夹
 alias open=explorer
 
-
-
+export WORKSPACE="/e/workspace"
+alias ws="cd $WORKSPACE"
 
 ################################ rm ######################################
 
@@ -46,14 +47,10 @@ source "${HOME}/.liut/common/rm.sh"
 #####
 alias ~='cd ~'
 alias ..='cd ..'
-alias ...='cd ...'
-alias ....='cd ....'
-alias .....='cd .....'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
 
-alias ll='ls -l'
+alias ll='ls -l --color=auto --show-control-chars'
 alias ls='ls -F --color=auto --show-control-chars'
 alias l='ls -alF --color=auto --show-control-chars'
-
-alias sdk="cd $ANDROID_HOME"
-
-
