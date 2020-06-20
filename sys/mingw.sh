@@ -25,8 +25,6 @@ export ANDROID_HOME='/C/Users/admin/AppData/Local/Android/Sdk'
 # adb path
 # export PATH=$PATH:'$ANDROID_HOME/platform-tools'
 
-alias sdk="cd $ANDROID_HOME"
-
 # 安卓相关
 source "${HOME}/.liut/common/android.sh"
 

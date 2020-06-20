@@ -47,3 +47,9 @@ alias dev='adb devices'
 
 # 安装 apk
 alias ins='adb install'
+
+# 卸载 apk
+alias uins='adb uninstall'
+
+# 进入 SDK 文件夹
+alias sdk="cd $ANDROID_HOME"
