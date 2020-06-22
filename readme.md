@@ -2,7 +2,7 @@
 
 ## 一些命令行
 
-| 功能/系统/描述 | 命令 | Darwin | Linux | Mingw | desc |
+| 功能/系统/描述 | 命令 | Darwin | Linux | MinGW / MSYS2 | desc |
 | :---: | --- | :---: | :---: | :---: | --- |
 | android | topa | Y | Y | Y | 查看当前连接设备的栈顶 Activity 后可接参数设备的 SERIAL |
 |  | topa2 | Y | Y | Y | 同上，另一种方式 |
