@@ -2,8 +2,9 @@
 
 # 自动重试一个命令
 function retry() {
+  time=0;
   # shellcheck disable=SC2050
-  while [ 0 -eq 0 ]; do
+  while [ $time -lt 100 ]; do
     echo ".................. job begin  ..................."
 
     echo "$1"
@@ -13,7 +14,8 @@ function retry() {
       echo "--------------- job complete ---------------"
       break
     else
-      echo "...............error occur, retry in 2 seconds .........."
+      time=$((time+1))
+      echo "[第 $time 次执行 < $1 > 失败, 两秒后重试] 错误码: $?, 时间: $(date)"
       sleep 2
     fi
   done
