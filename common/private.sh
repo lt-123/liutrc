@@ -15,6 +15,7 @@ function gitconfigSogukj() {
   cat "$HOME/.gitconfig"
 }
 
-function gitconfigShow() {
-  cat "$HOME/.gitconfig"
-}
+alias gitconfigShow="cat "$HOME/.gitconfig""
+
+alias stock="py ${HOME}//cmd-stock-quotes/stock.py"
+
