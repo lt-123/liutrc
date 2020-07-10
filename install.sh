@@ -3,26 +3,29 @@
 # 出错后停止
 #set -e
 
+LIUT_HOME=${HOME}/.liut
+LIUT_RC_HOME=${LIUT_HOME}/liutrc
+
 # 复制 liutrc 到
 
-if test ! -d ${HOME}/.liut; then
-  mkdir ${HOME}/.liut
-  echo "创建 ${HOME}/.liut 文件夹"
+if test ! -d ${LIUT_RC_HOME}; then
+  mkdir ${LIUT_RC_HOME}
+  echo "创建 ${LIUT_RC_HOME} 文件夹"
 fi
 
 # 复制所有到 .liut
 dn=$(dirname $0)
-cp -r ${dn}/* ${HOME}/.liut/
+cp -r ${dn}/* ${LIUT_RC_HOME}/
 unset dn
 
-cd ${HOME}/.liut/
+cd ${LIUT_RC_HOME}/
 
 echo "LIUT_RC_HOME `pwd`"
 
 ls -l
 
 # shellcheck source=.liut/liutrc.sh
-source ${HOME}/.liut/liutrc.sh
+source ${LIUT_RC_HOME}/liutrc.sh
 
 echo "检查 zshrc/bashrc"
 
@@ -31,11 +34,12 @@ if [ -e ${HOME}/.zshrc ]; then
   liutrc_line=$(cat ${HOME}/.zshrc | grep 'liutrc.sh')
 fi
 
-if [ "$liutrc_line" != 'source ${HOME}/.liut/liutrc.sh' ]; then
+# 此处路径不能用 LIUT_RC_HOME ！！！！
+if [ "$liutrc_line" != 'source ${HOME}/.liut/liutrc/liutrc.sh' ]; then
   {
     echo ''
     echo '# liutrc'
-    echo 'source ${HOME}/.liut/liutrc.sh'
+    echo 'source ${HOME}/.liut/liutrc/liutrc.sh'
   } >>${HOME}/.zshrc
 
   echo "${HOME}/.zshrc 已处理"
@@ -51,11 +55,12 @@ if [ -e ${HOME}/.bashrc ]; then
   liutrc_line=$(cat ${HOME}/.bashrc | grep 'liutrc.sh')
 fi
 
-if [ "$liutrc_line" != 'source ${HOME}/.liut/liutrc.sh' ]; then
+# 此处路径不能用 LIUT_RC_HOME ！！！！
+if [ "$liutrc_line" != 'source ${HOME}/.liut/liutrc/liutrc.sh' ]; then
   {
     echo ''
     echo '# liutrc'
-    echo 'source ${HOME}/.liut/liutrc.sh'
+    echo 'source ${HOME}/.liut/liutrc/liutrc.sh'
   } >>${HOME}/.bashrc
 
   echo "${HOME}/.bashrc 已处理"

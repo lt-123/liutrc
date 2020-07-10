@@ -15,7 +15,9 @@ fi
 
 # readonly OS_TYPE
 export OS_TYPE
-export LIUT_RC_HOME="${HOME}/.liut"
+
+LIUT_HOME=${HOME}/.liut
+export LIUT_RC_HOME=${LIUT_HOME}/liutrc
 
 # 系统相关
 case ${OS_TYPE} in

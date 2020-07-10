@@ -21,12 +21,12 @@ alias jdk-as8="export JAVA_HOME=$JAVA_AS_8"
 
 # win 平台 sdk 环境变量配置
 # android Home
-export ANDROID_HOME='/C/Users/admin/AppData/Local/Android/Sdk'
+export ANDROID_HOME='/C/Users/liut/AppData/Local/Android/Sdk'
 # adb path
 export PATH=$PATH:"$ANDROID_HOME/platform-tools"
 
 # 安卓相关
-source "${HOME}/.liut/common/android.sh"
+source "${LIUT_RC_HOME}/common/android.sh"
 
 ######################################################################
 
@@ -40,4 +40,4 @@ alias ws="cd $WORKSPACE"
 
 # 回收站文件夹
 export TRASH_PATH=~/.Trash
-source "${HOME}/.liut/common/rm.sh"
+source "${LIUT_RC_HOME}/common/rm.sh"

@@ -35,7 +35,7 @@ export PATH=$PATH:~/Library/Android/sdk/platform-tools
 # android Home
 export ANDROID_HOME=~/Library/Android/sdk
 # 安卓相关
-source "${HOME}/.liut/common/android.sh"
+source "${LIUT_RC_HOME}/common/android.sh"
 
 ################################## proxy ####################################
 
@@ -62,4 +62,4 @@ function unproxy() {
 
 # 回收站文件夹
 export TRASH_PATH=~/.Trash
-source "${HOME}/.liut/common/rm.sh"
+source "${LIUT_RC_HOME}/common/rm.sh"

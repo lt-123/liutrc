@@ -20,7 +20,7 @@ export PATH=$PATH:~/Android/Sdk/platform-tools
 # android Home
 export ANDROID_HOME=~/Android/Sdk
 # 安卓相关
-source "${HOME}/.liut/common/android.sh"
+source "${LIUT_RC_HOME}/common/android.sh"
 
 
 ######################################################################
@@ -34,6 +34,6 @@ alias open=nautilus
 
 # 回收站文件夹
 export TRASH_PATH=~/.local/share/Trash/files
-source "${HOME}/.liut/common/rm.sh"
+source "${LIUT_RC_HOME}/common/rm.sh"
 
 
