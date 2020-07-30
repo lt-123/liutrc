@@ -9,6 +9,7 @@ LIUT_RC_HOME=${LIUT_HOME}/liutrc
 # 复制 liutrc 到
 
 if test ! -d ${LIUT_RC_HOME}; then
+  mkdir ${LIUT_HOME}
   mkdir ${LIUT_RC_HOME}
   echo "创建 ${LIUT_RC_HOME} 文件夹"
 fi
