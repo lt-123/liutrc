@@ -41,8 +41,8 @@ case ${OS_TYPE} in
 esac
 
 # 通用
-# shellcheck source=.liut/common/commin_func.sh
-source "${LIUT_RC_HOME}/common/commin_func.sh"
+# shellcheck source=.liut/common/common_func.sh
+source "${LIUT_RC_HOME}/common/common_func.sh"
 
 # 通用(个人私有)
 # shellcheck source=.liut/common/private.sh

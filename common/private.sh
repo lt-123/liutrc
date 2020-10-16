@@ -21,14 +21,17 @@
 
 function startTrojan() {
   bash $LIUT_RC_HOME/common/trojan.sh
+  privoxy /etc/privoxy/config
   echo 'trojan 已启动'
 }
 
 function stopTrojan() {
   killall trojan
+  killall privoxy
   echo 'trojan 已停止'
 }
 
 function showTrojan() {
   ps -ef | grep trojan
+  ps -ef | grep privoxy
 }
