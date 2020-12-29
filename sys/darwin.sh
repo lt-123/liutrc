@@ -37,26 +37,6 @@ export ANDROID_HOME=~/Library/Android/sdk
 # 安卓相关
 source "${LIUT_RC_HOME}/common/android.sh"
 
-################################## proxy ####################################
-
-# 设置代理函数 接受端口参数 默认 1920
-function proxy() {
-  if [ $1 ]; then
-    port=$1
-  else
-    port=1920
-  fi
-  export all_proxy=socks5://127.0.0.1:$port
-  echo "已设置代理 socks5://127.0.0.1:$port"
-}
-
-# 取消代理
-function unproxy() {
-  echo "已取消代理 ${all_proxy}"
-  unset all_proxy
-}
-
-
 
 ################################ rm ######################################
 
