@@ -3,8 +3,8 @@
 ############################# jdk #########################################
 
 #添加JDK的环境变量
-export JAVA_8_HOME=~/.jdks/adopt-openjdk-1.8.0_262
-# export JAVA_11_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.5.jdk/Contents/Home
+export JAVA_8_HOME=/usr/lib/jvm/java-8-openjdk
+export JAVA_11_HOME=/usr/lib/jvm/java-11-openjdk
 #默认JDK1.8
 export JAVA_HOME=$JAVA_8_HOME
 export PATH=${PATH}:${JAVA_HOME}/bin
