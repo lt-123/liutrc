@@ -49,3 +49,9 @@ function unproxy() {
   echo "已取消代理 ${all_proxy}"
   unset all_proxy
 }
+
+################################ 公网IP ##################################
+
+function showip() {
+  curl https://dingtalk.ppno.net/ipseek
+}
