@@ -6,7 +6,7 @@
 export JAVA_8_HOME=/usr/lib/jvm/java-8-openjdk
 export JAVA_11_HOME=/usr/lib/jvm/java-11-openjdk
 #默认JDK1.8
-export JAVA_HOME=$JAVA_8_HOME
+export JAVA_HOME=JAVA_11_HOME
 export PATH=${PATH}:${JAVA_HOME}/bin
 
 #alias命令动态切换JDK版本
