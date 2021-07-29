@@ -10,8 +10,10 @@ export JAVA_HOME=JAVA_11_HOME
 export PATH=${PATH}:${JAVA_HOME}/bin
 
 #alias命令动态切换JDK版本
-alias jdk8='export JAVA_HOME=$JAVA_8_HOME'
-alias jdk11='export JAVA_HOME=$JAVA_11_HOME'
+# shellcheck disable=SC2139
+alias jdk8="export JAVA_HOME=$JAVA_8_HOME"
+# shellcheck disable=SC2139
+alias jdk11="export JAVA_HOME=$JAVA_11_HOME"
 
 ######################################################################
 
