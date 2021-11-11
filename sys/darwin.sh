@@ -18,11 +18,31 @@ export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 
 ############################# jdk #########################################
 
+#For the system Java wrappers to find this JDK, symlink it with
+#  sudo ln -sfn /opt/homebrew/opt/openjdk@11/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-11.jdk
+#
+#openjdk@11 is keg-only, which means it was not symlinked into /opt/homebrew,
+#because this is an alternate version of another formula.
+#
+#If you need to have openjdk@11 first in your PATH, run:
+#  echo 'export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"' >> ~/.zshrc
+#
+#For compilers to find openjdk@11 you may need to set:
+#  export CPPFLAGS="-I/opt/homebrew/opt/openjdk@11/include"
+
+
+
 #添加JDK的环境变量
-export JAVA_8_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_241.jdk/Contents/Home
-export JAVA_11_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.5.jdk/Contents/Home
+#export JAVA_8_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_241.jdk/Contents/Home
+#export JAVA_11_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.5.jdk/Contents/Home
+
+
+#添加JDK的环境变量 openjdk
+export JAVA_8_HOME=/Library/Java/JavaVirtualMachines/openjdk-8.jdk/Contents/Home
+export JAVA_11_HOME=/Library/Java/JavaVirtualMachines/openjdk-11.jdk/Contents/Home
+
 #默认JDK1.8
-export JAVA_HOME=$JAVA_8_HOME
+export JAVA_HOME=$JAVA_11_HOME
 
 #alias命令动态切换JDK版本
 alias jdk8="export JAVA_HOME=$JAVA_8_HOME"
