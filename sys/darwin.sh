@@ -63,3 +63,6 @@ source "${LIUT_RC_HOME}/common/android.sh"
 # 回收站文件夹
 export TRASH_PATH=~/.Trash
 source "${LIUT_RC_HOME}/common/rm.sh"
+
+# 更新
+alias bb="brew update && brew upgrade"
