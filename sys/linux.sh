@@ -47,3 +47,7 @@ export TRASH_PATH=~/.local/share/Trash/files
 source "${LIUT_RC_HOME}/common/rm.sh"
 
 
+# 更新
+alias up="yay -Syyu --no-confirm"
+
+
