@@ -48,6 +48,6 @@ source "${LIUT_RC_HOME}/common/rm.sh"
 
 
 # 更新
-alias up="yay -Syyu --no-confirm"
+alias up="yay -Syyu --noconfirm"
 
 
