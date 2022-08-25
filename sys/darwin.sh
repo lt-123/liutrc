@@ -38,7 +38,8 @@ export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 
 
 #添加JDK的环境变量 openjdk
-export JAVA_8_HOME=/Library/Java/JavaVirtualMachines/openjdk-8.jdk/Contents/Home
+#export JAVA_8_HOME=/Library/Java/JavaVirtualMachines/openjdk-8.jdk/Contents/Home
+export JAVA_8_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
 export JAVA_11_HOME=/Library/Java/JavaVirtualMachines/openjdk-11.jdk/Contents/Home
 
 #默认JDK1.8
