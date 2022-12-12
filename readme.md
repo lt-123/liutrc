@@ -23,9 +23,9 @@
 
 ```shell
 # curl
-curl -fsSL https://raw.githubusercontent.com/lt-123/liutrc/master/install.sh | zsh
+curl -fsSL https://raw.githubusercontent.com/lt-123/liutrc/master/install.sh | bash
 # or wget
-wget -nv -O - https://raw.githubusercontent.com/lt-123/liutrc/master/install.sh | zsh
+wget -nv -O - https://raw.githubusercontent.com/lt-123/liutrc/master/install.sh | bash
 ```
 
 
