@@ -15,7 +15,7 @@ echo "检查 zshrc/bashrc"
 
 ############检查 zshrc#############
 if [ -e "${HOME}"/.zshrc ]; then
-  liutrc_line=$(cat ${HOME}/.zshrc | grep 'liutrc.sh') || "false"
+  liutrc_line=$(cat ${HOME}/.zshrc | grep 'liutrc.sh') || true
 fi
 
 # 此处路径不能用 LIUT_RC_HOME ！！！！
@@ -36,7 +36,7 @@ unset liutrc_line
 
 ############检查 bashrc#############
 if [ -e "${HOME}"/.bashrc ]; then
-  liutrc_line=$(cat ${HOME}/.bashrc | grep 'liutrc.sh') || "false"
+  liutrc_line=$(cat ${HOME}/.bashrc | grep 'liutrc.sh') || true
 fi
 
 # 此处路径不能用 LIUT_RC_HOME ！！！！
