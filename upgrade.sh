@@ -2,7 +2,7 @@
 
 function liutrc_upgrade() {
   dir=$(pwd)
-  cd $LIUTRC_HOME
+  cd $LIUT_RC_HOME
   git pull
-  cd dir
+  cd $dir
 }
