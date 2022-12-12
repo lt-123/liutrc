@@ -36,9 +36,7 @@ source "${LIUT_RC_HOME}/common/android.sh"
 
 
 # 打开文件夹
-function open() {
-  nautilus $1 &
-}
+alias open=xdg-open
 
 ######################################################################
 
