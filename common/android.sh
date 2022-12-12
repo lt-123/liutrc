@@ -6,8 +6,7 @@
 
 # 检查是否配置了 adb 路径到 $path
 if [ ! $(which adb) ]; then
-  echo 'no adb'
-  return 1
+  echo 'miss adb command'
 fi
 
 # 查看顶端 Activity
