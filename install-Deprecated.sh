@@ -1,20 +1,37 @@
 #!/usr/bin/env bash
 
-set -xue
+# 出错后停止
+set -e
 
 LIUT_HOME=${HOME}/.liut
 LIUT_RC_HOME=${LIUT_HOME}/liutrc
 
-git clone https://github.com/lt-123/liutrc.git "$LIUT_RC_HOME"
+# 复制 liutrc 到
 
-ls -l "$LIUT_RC_HOME"
+if test ! -d ${LIUT_RC_HOME}; then
+  mkdir ${LIUT_HOME}
+  mkdir ${LIUT_RC_HOME}
+  echo "创建 ${LIUT_RC_HOME} 文件夹"
+fi
 
-source "${LIUT_RC_HOME}"/liutrc.sh
+# 复制所有到 .liut
+dn=$(dirname $0)
+cp -r ${dn}/* ${LIUT_RC_HOME}/
+unset dn
+
+cd ${LIUT_RC_HOME}/
+
+echo "LIUT_RC_HOME `pwd`"
+
+ls -l
+
+# shellcheck source=.liut/liutrc.sh
+source ${LIUT_RC_HOME}/liutrc.sh
 
 echo "检查 zshrc/bashrc"
 
 ############检查 zshrc#############
-if [ -e "${HOME}"/.zshrc ]; then
+if [ -e ${HOME}/.zshrc ]; then
   liutrc_line=$(cat ${HOME}/.zshrc | grep 'liutrc.sh')
 fi
 
@@ -35,7 +52,7 @@ unset liutrc_line
 
 
 ############检查 bashrc#############
-if [ -e "${HOME}"/.bashrc ]; then
+if [ -e ${HOME}/.bashrc ]; then
   liutrc_line=$(cat ${HOME}/.bashrc | grep 'liutrc.sh')
 fi
 

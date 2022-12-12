@@ -21,8 +21,11 @@
 
 ## 安装
 
-暂时只支持 zsh/bash， 拉下代码， 执行 install.sh 即可完成安装
+```shell
+# curl
+curl -fsSL https://raw.githubusercontent.com/lt-123/liutrc/master/install.sh | zsh
+# or wget
+wget -nv -O - https://raw.githubusercontent.com/lt-123/liutrc/master/install.sh | zsh
+```
 
-## TODO
 
-- 不拉代码， 直接网络安装

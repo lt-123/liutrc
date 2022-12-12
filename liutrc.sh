@@ -47,3 +47,6 @@ source "${LIUT_RC_HOME}/common/common_func.sh"
 # 通用(个人私有)
 # shellcheck source=.liut/common/private.sh
 source "${LIUT_RC_HOME}/common/private.sh"
+
+# 更新
+source "${LIUT_RC_HOME}/upgrade.sh"
