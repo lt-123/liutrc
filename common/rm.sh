@@ -12,7 +12,7 @@ fi
 
 # 如果文件夹不存在 则创建
 if [ ! -d $TRASH_PATH ]; then
-  mkdir "$TRASH_PATH"
+  mkdir -p "$TRASH_PATH"
 fi
 
 # 安全删除 （移动到回收站）
