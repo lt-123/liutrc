@@ -24,9 +24,9 @@ export PATH=$PATH:~/Android/Sdk/platform-tools
 export ANDROID_HOME=~/Android/Sdk
 
 # android ndk Home
-export ANDROID_NDK_HOME=/home/liut/Android/Sdk/ndk/16.1.4479499
+#export ANDROID_NDK_HOME=/home/liut/Android/Sdk/ndk/16.1.4479499
 # ndk path
-export PATH=${PATH}:${ANDROID_NDK_HOME}:${ANDROID_NDK_HOME}/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64/bin
+#export PATH=${PATH}:${ANDROID_NDK_HOME}:${ANDROID_NDK_HOME}/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64/bin
 
 # 安卓相关
 source "${LIUT_RC_HOME}/common/android.sh"
