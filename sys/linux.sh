@@ -36,7 +36,9 @@ source "${LIUT_RC_HOME}/common/android.sh"
 
 
 # 打开文件夹
-alias open=xdg-open
+function open() {
+    xdg-open "$*" 2> /dev/null 1> /dev/null
+}
 
 ######################################################################
 
