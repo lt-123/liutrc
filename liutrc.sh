@@ -4,11 +4,15 @@
 OS_TYPE=$(uname)
 
 # MSYS 特殊处理
+# shellcheck disable=SC2046
+# shellcheck disable=SC2143
 if [ $(echo "$OS_TYPE" | grep 'MSYS') ]; then
   OS_TYPE='MSYS'
 fi
 
 # mingw 特殊处理
+# shellcheck disable=SC2046
+# shellcheck disable=SC2143
 if [ $(echo "$OS_TYPE" | grep 'MINGW') ]; then
   OS_TYPE='MINGW'
 fi
@@ -40,12 +44,13 @@ case ${OS_TYPE} in
   ;;
 esac
 
+# 别名
+source "${LIUT_RC_HOME}/common/alias.sh"
+
 # 通用
-# shellcheck source=.liut/common/common_func.sh
 source "${LIUT_RC_HOME}/common/common_func.sh"
 
 # 通用(个人私有)
-# shellcheck source=.liut/common/private.sh
 source "${LIUT_RC_HOME}/common/private.sh"
 
 # 更新

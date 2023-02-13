@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+function take() {
+  # shellcheck disable=SC2164
+  mkdir "$1" && cd "$1"
+}
+
 # 自动重试一个命令
 function retry() {
   time=0
@@ -44,7 +49,6 @@ function http_proxy() {
   echo "已设置代理 http://127.0.0.1:$port"
 }
 
-
 # 设置 sock 代理函数 接受端口参数 默认 2048
 function socks_proxy_207() {
   if [ "$1" ]; then
@@ -66,7 +70,6 @@ function http_proxy_207() {
   export all_proxy=http://10.0.90.207:$port
   echo "已设置代理 http://10.0.90.207:$port"
 }
-
 
 # 取消代理
 function unproxy() {
