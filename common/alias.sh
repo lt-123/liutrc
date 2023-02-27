@@ -1,5 +1,14 @@
 #!/usr/bin/env bash
 
+alias ll='ls -lh'       # long format and human-readable sizes
+alias l='ll -A'         # long format, all files
+# shellcheck disable=SC2139
+alias lm="l | ${PAGER}" # long format, all files, use pager
+alias lr='ll -R'        # long format, recursive
+alias lk='ll -Sr'       # long format, largest file size last
+alias lt='ll -tr'       # long format, newest modification time last
+alias lc='lt -c'        # long format, newest status change (ctime) last
+
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
