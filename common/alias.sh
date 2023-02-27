@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # bash only
-if [ "$0" == 'bash' ]; then
+if [[ "$0" == 'bash' ]]; then
   alias ll='ls -lh' # long format and human-readable sizes
   alias l='ll -A'   # long format, all files
   # shellcheck disable=SC2139
