@@ -48,6 +48,6 @@ alias du2='du -h -d 2'
 alias du3='du -h -d 3'
 
 # 翻译到中文
-alias trans = 'trans :zh'
+alias tz='trans :zh'
 # 翻译到英文
-alias snart = 'trans :en'
+alias te='trans :en'
