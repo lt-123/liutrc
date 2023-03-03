@@ -46,3 +46,8 @@ alias tf='tail -f'
 alias du1='du -h -d 1'
 alias du2='du -h -d 2'
 alias du3='du -h -d 3'
+
+# 翻译到中文
+alias trans = 'trans :zh'
+# 翻译到英文
+alias snart = 'trans :en'
