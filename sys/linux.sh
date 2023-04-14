@@ -5,6 +5,7 @@
 #添加JDK的环境变量
 export JAVA_8_HOME=/usr/lib/jvm/java-8-openjdk
 export JAVA_11_HOME=/usr/lib/jvm/java-11-openjdk
+export JAVA_17_HOME=/usr/lib/jvm/java-17-openjdk
 #默认JDK1.8
 export JAVA_HOME=$JAVA_11_HOME
 export PATH=${PATH}:${JAVA_HOME}/bin
@@ -14,6 +15,8 @@ export PATH=${PATH}:${JAVA_HOME}/bin
 alias jdk8="export JAVA_HOME=$JAVA_8_HOME"
 # shellcheck disable=SC2139
 alias jdk11="export JAVA_HOME=$JAVA_11_HOME"
+# shellcheck disable=SC2139
+alias jdk11="export JAVA_HOME=$JAVA_17_HOME"
 
 ######################################################################
 
