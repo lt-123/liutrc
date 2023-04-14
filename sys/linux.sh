@@ -16,7 +16,7 @@ alias jdk8="export JAVA_HOME=$JAVA_8_HOME"
 # shellcheck disable=SC2139
 alias jdk11="export JAVA_HOME=$JAVA_11_HOME"
 # shellcheck disable=SC2139
-alias jdk11="export JAVA_HOME=$JAVA_17_HOME"
+alias jdk17="export JAVA_HOME=$JAVA_17_HOME"
 
 ######################################################################
 
