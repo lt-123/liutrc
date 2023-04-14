@@ -51,3 +51,6 @@ alias du3='du -h -d 3'
 alias tz='trans :zh'
 # 翻译到英文
 alias te='trans :en'
+
+# 进入到工作目录
+alias ws='cd ~/workspace'

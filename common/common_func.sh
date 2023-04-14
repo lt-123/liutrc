@@ -82,3 +82,11 @@ function unproxy() {
 function showip() {
   curl https://dingtalk.ppno.net/ipseek
 }
+
+function o() {
+  if [ "$1" ]; then
+    open $1
+  else
+    open .
+  fi
+}
