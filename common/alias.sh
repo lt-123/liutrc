@@ -5,7 +5,7 @@ if [[ "$0" == 'bash' ]]; then
   alias ll='ls -lh' # long format and human-readable sizes
   alias l='ll -A'   # long format, all files
   # shellcheck disable=SC2139
-  alias lm="l | ${PAGER}" # long format, all files, use pager
+  #alias lm="l | ${PAGER}" # long format, all files, use pager
   alias lr='ll -R'        # long format, recursive
   alias lk='ll -Sr'       # long format, largest file size last
   alias lt='ll -tr'       # long format, newest modification time last
