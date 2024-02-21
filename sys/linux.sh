@@ -8,15 +8,23 @@ export JAVA_11_HOME=/usr/lib/jvm/java-11-openjdk
 export JAVA_17_HOME=/usr/lib/jvm/java-17-openjdk
 #默认JDK1.8
 export JAVA_HOME=$JAVA_11_HOME
-export PATH=${PATH}:${JAVA_HOME}/bin
+export PATH=${JAVA_HOME}/bin:${PATH}
 
 #alias命令动态切换JDK版本
-# shellcheck disable=SC2139
-alias jdk8="export JAVA_HOME=$JAVA_8_HOME"
-# shellcheck disable=SC2139
-alias jdk11="export JAVA_HOME=$JAVA_11_HOME"
-# shellcheck disable=SC2139
-alias jdk17="export JAVA_HOME=$JAVA_17_HOME"
+function jdk8(){
+	export JAVA_HOME=$JAVA_8_HOME
+	export PATH=${JAVA_HOME}/bin:${PATH}
+}
+
+function jdk11(){
+	export JAVA_HOME=$JAVA_11_HOME
+	export PATH=${JAVA_HOME}/bin:${PATH}
+}
+
+function jdk17(){
+	export JAVA_HOME=$JAVA_17_HOME
+	export PATH=${JAVA_HOME}/bin:${PATH}
+}
 
 ######################################################################
 
