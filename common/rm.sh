@@ -25,7 +25,7 @@ function rm() {
     if test ! -r "$delete_file"; then
       echo "文件 ${file} 不存在"
     else
-      if test -e "${TRASH_PATH}${file}"; then
+      if test -e "${TRASH_PATH}/${file}"; then
         rm_date=$(date "+%Y%m%d%H%M%S")
 
         mv "${delete_file}" "${TRASH_PATH}${file}-${rm_date}"
