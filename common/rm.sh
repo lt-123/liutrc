@@ -28,7 +28,7 @@ function rm() {
       if test -e "${TRASH_PATH}/${file}"; then
         rm_date=$(date "+%Y%m%d%H%M%S")
 
-        mv "${delete_file}" "${TRASH_PATH}${file}-${rm_date}"
+        mv "${delete_file}" "${TRASH_PATH}/${file}-${rm_date}"
 
         echo "safe rm $delete_file-${rm_date}"
         unset rm_date
