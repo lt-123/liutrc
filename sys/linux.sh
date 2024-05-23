@@ -6,9 +6,6 @@
 export JAVA_8_HOME=/usr/lib/jvm/java-8-openjdk
 export JAVA_11_HOME=/usr/lib/jvm/java-11-openjdk
 export JAVA_17_HOME=/usr/lib/jvm/java-17-openjdk
-#默认JDK1.8
-export JAVA_HOME=$JAVA_11_HOME
-export PATH=${JAVA_HOME}/bin:${PATH}
 
 #alias命令动态切换JDK版本
 function jdk8(){
@@ -25,6 +22,8 @@ function jdk17(){
 	export JAVA_HOME=$JAVA_17_HOME
 	export PATH=${JAVA_HOME}/bin:${PATH}
 }
+
+jdk17
 
 ######################################################################
 
