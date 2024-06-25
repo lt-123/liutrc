@@ -4,11 +4,6 @@
 # 通过 source 使用， 需配置 adb 路径到 $path
 ##################################################
 
-# 检查是否配置了 adb 路径到 $path
-if [ ! $(which adb) ]; then
-  echo 'miss adb command'
-fi
-
 # 查看顶端 Activity
 function topa() {
   serial=$1
