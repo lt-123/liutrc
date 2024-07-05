@@ -41,6 +41,9 @@ export ANDROID_HOME=~/Android/Sdk
 # 安卓相关
 source "${LIUT_RC_HOME}/common/android.sh"
 
+# 鸿蒙
+source "${LIUT_RC_HOME}/common/ohos.sh"
+
 
 ######################################################################
 

@@ -59,6 +59,8 @@ export PATH=$PATH:~/Library/Android/sdk/platform-tools
 export ANDROID_HOME=~/Library/Android/sdk
 # 安卓相关
 source "${LIUT_RC_HOME}/common/android.sh"
+# 鸿蒙
+source "${LIUT_RC_HOME}/common/ohos.sh"
 
 
 ################################ rm ######################################
