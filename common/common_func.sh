@@ -27,19 +27,19 @@ function retry() {
 
 ################################## proxy ####################################
 
-# 设置 sock 代理函数 接受端口参数 默认 2048
-function socks_proxy() {
+# 设置 sock 代理函数 接受端口参数 默认 1024
+function proxy_socks() {
   if [ "$1" ]; then
     port=$1
   else
-    port=2048
+    port=1024
   fi
   export all_proxy=socks5://127.0.0.1:$port
   echo "已设置代理 socks5://127.0.0.1:$port"
 }
 
 # 设置 http 代理函数 接受端口参数 默认 1123
-function http_proxy() {
+function proxy_http() {
   if [ "$1" ]; then
     port=$1
   else
@@ -49,27 +49,6 @@ function http_proxy() {
   echo "已设置代理 http://127.0.0.1:$port"
 }
 
-# 设置 sock 代理函数 接受端口参数 默认 2048
-function socks_proxy_207() {
-  if [ "$1" ]; then
-    port=$1
-  else
-    port=1024
-  fi
-  export all_proxy=socks5://10.0.90.207:$port
-  echo "已设置代理 socks5://10.0.90.207:$port"
-}
-
-# 设置 http 代理函数 接受端口参数 默认 1123
-function http_proxy_207() {
-  if [ "$1" ]; then
-    port=$1
-  else
-    port=1123
-  fi
-  export all_proxy=http://10.0.90.207:$port
-  echo "已设置代理 http://10.0.90.207:$port"
-}
 
 # 取消代理
 function unproxy() {
