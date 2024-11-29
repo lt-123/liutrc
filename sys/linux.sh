@@ -42,7 +42,7 @@ export ANDROID_HOME=~/Android/Sdk
 source "${LIUT_RC_HOME}/common/android.sh"
 
 # 鸿蒙
-source "${LIUT_RC_HOME}/common/ohos.sh"
+source "${LIUT_RC_HOME}/linux_ohos.sh"
 
 
 ######################################################################
