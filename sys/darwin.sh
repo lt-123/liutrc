@@ -42,14 +42,17 @@ export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 export JAVA_8_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
 export JAVA_11_HOME=/Library/Java/JavaVirtualMachines/openjdk-11.jdk/Contents/Home
 export JAVA_17_HOME=/Library/Java/JavaVirtualMachines/openjdk-17.jdk/Contents/Home
+export JAVA_17_HOME=/Library/Java/JavaVirtualMachines/openjdk-21.jdk/Contents/Home
 
-#默认JDK1.8
-export JAVA_HOME=$JAVA_11_HOME
 
 #alias命令动态切换JDK版本
 alias jdk8="export JAVA_HOME=$JAVA_8_HOME"
 alias jdk11="export JAVA_HOME=$JAVA_11_HOME"
 alias jdk17="export JAVA_HOME=$JAVA_17_HOME"
+alias jdk21="export JAVA_HOME=$JAVA_21_HOME"
+
+#默认JDK17
+export JAVA_HOME=$JAVA_17_HOME
 
 ################################# android #####################################
 
