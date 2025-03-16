@@ -42,7 +42,7 @@ export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 export JAVA_8_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
 export JAVA_11_HOME=/Library/Java/JavaVirtualMachines/openjdk-11.jdk/Contents/Home
 export JAVA_17_HOME=/Library/Java/JavaVirtualMachines/openjdk-17.jdk/Contents/Home
-export JAVA_17_HOME=/Library/Java/JavaVirtualMachines/openjdk-21.jdk/Contents/Home
+export JAVA_21_HOME=/Library/Java/JavaVirtualMachines/openjdk-21.jdk/Contents/Home
 
 
 #alias命令动态切换JDK版本
