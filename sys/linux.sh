@@ -51,7 +51,7 @@ source "${LIUT_RC_HOME}/common/android.sh"
 
 # 鸿蒙 SDK 安装路径
 export COMMANDLINE_TOOL_DIR=~/Android
-source "${LIUT_RC_HOME}/sys/ohos.sh"
+source "${LIUT_RC_HOME}/common/ohos.sh"
 
 
 ######################################################################
