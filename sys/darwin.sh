@@ -63,6 +63,8 @@ export ANDROID_HOME=~/Library/Android/sdk
 # 安卓相关
 source "${LIUT_RC_HOME}/common/android.sh"
 
+################################ ohos ######################################
+
 # 鸿蒙 hdc
 export PATH=$PATH:/Users/liut/Library/OpenHarmony/Sdk/12/toolchains
 
