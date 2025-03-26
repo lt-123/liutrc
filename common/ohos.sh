@@ -7,10 +7,9 @@ export PATH=${COMMANDLINE_TOOL_DIR}/command-line-tools/bin:$PATH
 export HDC_HOME=${COMMANDLINE_TOOL_DIR}/command-line-tools/sdk/default/openharmony/toolchains #设置hdc工具的环境变量，hdc工具在toolchains所在路径下，请以实际路径为准
 export PATH=$HDC_HOME:$PATH
 
-
-# 进入package目录安装依赖
-function ohpm_install {
-    cd $1 || exit
-    ohpm install
+# 切换到指定目录$1并执行ohpm install指令
+function ohpm_install() {
+    cd $1 || exit       # $1：函数第一个参数, 必须是路径
+    ohpm install --all  # 安装所有依赖
 }
 
