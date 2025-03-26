@@ -6,10 +6,10 @@ eval "$(zoxide init zsh)"
 alias cat=bat
 alias top=btm
 alias htop=btm
-alis du=dust
-alis ls=lsd
-alis tree=lsd --tree
-alis find=fd
-alis grep=rg
-alis man=tldr
+alias du=dust
+alias ls=lsd
+alias tree=lsd --tree
+alias find=fd
+alias grep=rg
+alias man=tldr
 
