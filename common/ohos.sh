@@ -15,7 +15,7 @@ function ohpm_install() {
 
 # 连接 chrome 调试
 # 来自 https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-debugging-with-devtools#linux%E6%88%96mac%E5%B9%B3%E5%8F%B0
-function ohos_conn_web() {
+function hdc_conn_web() {
     # Get current fport rule list
     CURRENT_FPORT_LIST=$(hdc fport ls)
 
