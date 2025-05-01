@@ -47,3 +47,71 @@ alias uins='adb uninstall'
 
 # 进入 SDK 文件夹
 alias sdk="cd $ANDROID_HOME"
+
+
+# 卸载所有已安装应用 !!!!
+function uninstallAllApks() {
+  # 操作确认，输入 y 继续，其他输入退出
+  read -p "您确定要卸载所有已安装的应用吗？(y/n): " confirm
+  if [[ $confirm != "y" ]]; then
+    echo "操作已取消"
+    exit 0
+  fi
+
+  # 确保 ADB 已连接到设备
+  adb_status=$(adb get-state 2>&1)
+  if [[ $adb_status != "device" ]]; then
+    echo "错误：未检测到已连接的设备，请确保您的设备已连接并已启用 USB 调试模式"
+    exit 1
+  fi
+
+  echo "正在获取所有第三方应用列表..."
+
+  # 获取所有第三方应用包名（使用-3标志）
+  packages=$(adb shell pm list packages -3 | cut -d':' -f2)
+
+  # 如果没有找到任何包
+  if [[ -z "$packages" ]]; then
+    echo "未发现任何第三方应用"
+    exit 0
+  fi
+
+  # 统计变量
+  total_count=0
+  success_count=0
+  failed_count=0
+  failed_apps=""
+
+  echo "开始卸载应用程序..."
+  echo "------------------------------"
+
+  # 遍历并卸载每个包
+  for package in $packages; do
+    ((total_count++))
+    echo "正在尝试卸载: $package"
+
+    uninstall_result=$(adb uninstall "$package" 2>&1)
+
+    if [[ "$uninstall_result" == "Success" ]]; then
+      echo "✅ 已成功卸载: $package"
+      ((success_count++))
+    else
+      echo "❌ 卸载失败: $package (原因: $uninstall_result)"
+      ((failed_count++))
+      failed_apps="$failed_apps\n  - $package: $uninstall_result"
+    fi
+    echo "------------------------------"
+  done
+
+  # 显示卸载统计信息
+  echo -e "\n卸载操作完成！"
+  echo "总应用数量: $total_count"
+  echo "成功卸载: $success_count"
+  echo "卸载失败: $failed_count"
+
+  if [[ $failed_count -gt 0 ]]; then
+    echo -e "\n以下应用卸载失败:$failed_apps"
+  fi
+
+}
+
