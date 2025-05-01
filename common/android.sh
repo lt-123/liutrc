@@ -51,20 +51,6 @@ alias sdk="cd $ANDROID_HOME"
 
 # 卸载所有已安装应用 !!!!
 function uninstallAllApks() {
-  # 操作确认，输入 y 继续，其他输入退出
-  read -p "您确定要卸载所有已安装的应用吗？(y/n): " confirm
-  if [[ $confirm != "y" ]]; then
-    echo "操作已取消"
-    exit 0
-  fi
-
-  # 确保 ADB 已连接到设备
-  adb_status=$(adb get-state 2>&1)
-  if [[ $adb_status != "device" ]]; then
-    echo "错误：未检测到已连接的设备，请确保您的设备已连接并已启用 USB 调试模式"
-    exit 1
-  fi
-
   echo "正在获取所有第三方应用列表..."
 
   # 获取所有第三方应用包名（使用-3标志）
