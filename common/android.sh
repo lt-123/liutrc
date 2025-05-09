@@ -59,7 +59,6 @@ function uninstallAllApks() {
   # 如果没有找到任何包
   if [[ -z "$packages" ]]; then
     echo "未发现任何第三方应用"
-    exit 0
   fi
 
   # 统计变量
