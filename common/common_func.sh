@@ -69,3 +69,57 @@ function o() {
     open .
   fi
 }
+
+
+# 定义一个函数，用于递归 fetch 给定目录下的所有 Git 仓库
+fetch_all_git_repos() {
+  # 判断是否提供了 ROOT_DIR 参数
+  if [ -z "$1" ]; then
+    echo "缺少 ROOT_DIR 参数，请指定一个根目录作为参数。"
+    return 1
+  fi
+
+  # 根目录
+  local ROOT_DIR="$1"
+
+  # 检查目录是否存在
+  if [ ! -d "$ROOT_DIR" ]; then
+    echo "提供的目录 $ROOT_DIR 不存在或不是一个有效的目录。"
+    return 1
+  fi
+
+  # 遍历所有子目录
+  find "$ROOT_DIR" -type d -name ".git" | while read git_dir; do
+    # 获取 .git 所在的父目录
+    local repo_dir=$(dirname "$git_dir")
+
+    # 进入 Git 仓库目录
+    echo "进入目录: $repo_dir"
+    cd "$repo_dir" || { echo "无法进入 $repo_dir"; continue; }
+
+    # 检查是否是一个有效的 Git 仓库
+    if git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
+      echo "正在处理仓库: $repo_dir"
+
+      # 获取所有 remotes
+      local remotes=$(git remote)
+      if [[ -z "$remotes" ]]; then
+        echo "没有找到 remote，跳过 $repo_dir"
+        continue
+      fi
+
+      # Fetch 所有 remote 的所有分支
+      for remote in $remotes; do
+        echo "Fetching remote: $remote"
+        git fetch --all --prune --verbose
+      done
+    else
+      echo "$repo_dir 不是一个有效的 Git 仓库，跳过"
+    fi
+
+    echo "------------------------------------"
+  done
+
+  echo "所有仓库的 fetch 操作已完成！"
+}
+
