@@ -73,20 +73,13 @@ function o() {
 
 # 定义一个函数，用于递归 fetch 给定目录下的所有 Git 仓库
 fetch_all_git_repos() {
-  # 判断是否提供了 ROOT_DIR 参数
-  if [ -z "$1" ]; then
-    echo "缺少 ROOT_DIR 参数，请指定一个根目录作为参数。"
-    return 1
-  fi
+  # 获取传入的目录参数（默认为当前目录）
+  local ROOT_DIR=${1:-.}
 
-  # 根目录
-  local ROOT_DIR="$1"
+  # 将相对路径转换为绝对路径
+  ROOT_DIR=$(cd "$ROOT_DIR" && pwd)
 
-  # 检查目录是否存在
-  if [ ! -d "$ROOT_DIR" ]; then
-    echo "提供的目录 $ROOT_DIR 不存在或不是一个有效的目录。"
-    return 1
-  fi
+  echo "开始在目录: $ROOT_DIR 下查找 Git 仓库..."
 
   # 遍历所有子目录
   find "$ROOT_DIR" -type d -name ".git" | while read git_dir; do
