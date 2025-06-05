@@ -3,7 +3,7 @@
 ######################################################################
 
 # 现代命令行工具
-alias install_modern_cmd='sudo pacman -S bat bottom lsd fd tealdeer'
+alias install_modern_cmd='sudo pacman -S bat bottom lsd ripgrep fd tealdeer'
 alias install_modern_cmd_2='sudo pacman -S gitui'
 source "${LIUT_RC_HOME}/common/modern_cmd.sh"
 
