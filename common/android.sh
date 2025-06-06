@@ -71,7 +71,7 @@ function uninstallAllApks() {
   echo "------------------------------"
 
   # 遍历并卸载每个包
-  for package in $packages; do
+  while IFS= read -r package; do
     ((total_count++))
     echo "正在尝试卸载: $package"
 
@@ -86,7 +86,7 @@ function uninstallAllApks() {
       failed_apps="$failed_apps\n  - $package: $uninstall_result"
     fi
     echo "------------------------------"
-  done
+  done <<< "$packages"
 
   # 显示卸载统计信息
   echo -e "\n卸载操作完成！"
