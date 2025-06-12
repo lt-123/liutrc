@@ -54,7 +54,7 @@ function uninstallAllApks() {
   echo "正在获取所有第三方应用列表..."
 
   # 获取所有第三方应用包名（使用-3标志）
-  packages=$(adb shell pm list packages -3 | cut -d':' -f2)
+  packages=$(adb shell pm list packages | cut -d':' -f2)
 
   # 如果没有找到任何包
   if [[ -z "$packages" ]]; then
