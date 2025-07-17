@@ -80,3 +80,20 @@ source "${LIUT_RC_HOME}/common/rm.sh"
 alias up="paru -Syyu --noconfirm"
 
 
+function ipr(){
+  echo "=== 路由表 254 ==="
+  ip route show table 254  # 查看main表
+          echo
+  echo "=== 路由表 255 ==="
+  ip route show table 255  # 查看local表
+  echo
+  # 逐个检查路由表（0-255）
+  for i in {1..253}; do
+      result=$(ip route show table $i 2>/dev/null)
+      if [ -n "$result" ]; then
+          echo "=== 路由表 $i ==="
+          echo "$result"
+          echo
+      fi
+  done
+}
