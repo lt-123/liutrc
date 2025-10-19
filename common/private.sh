@@ -39,8 +39,8 @@ alias gitconfigShow="cat "$HOME/.gitconfig""
 
 # 设置 sock 代理函数 接受端口参数 默认 1024
 function proxy_koal() {
-  export all_proxy=socks5://10.0.209.60:1024
-  echo "已设置代理 socks5://10.0.209.60:1024"
+  export all_proxy=socks5://10.0.209.65:1024
+  echo "已设置代理 socks5://10.0.209.65:1024"
 }
 
 
