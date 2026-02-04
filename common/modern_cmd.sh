@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-eval "$(starship init zsh)"
-eval "$(zoxide init zsh)"
+#eval "$(starship init zsh)"
+#eval "$(zoxide init zsh)"
 
 alias cat=bat
 alias top=btm
