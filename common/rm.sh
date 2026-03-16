@@ -16,7 +16,7 @@ if [ ! -d $TRASH_PATH ]; then
 fi
 
 # 安全删除 （移动到回收站）
-function rm() {
+function trash() {
 
   # 遍历参数文件
   for file in $*; do
@@ -41,8 +41,3 @@ function rm() {
   done
 }
 
-# 原始的 rm 命令
-function rrm() {
-    /usr/bin/rm "$*"
-    echo "已删除 $*"
-}
