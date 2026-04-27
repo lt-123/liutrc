@@ -9,15 +9,24 @@ function take() {
 function retry() {
   time=0
   while [ $time -lt 100 ]; do
+    local stderr_file
+    stderr_file=$(mktemp "${TMPDIR:-/tmp}/retry-stderr.XXXXXX") || return 1
+
     echo "[任务开始 <$*>]"
     echo "---------------"
-    eval "$*"
+    eval "$*" 2> >(tee "$stderr_file" >&2)
     exitCode=$?
     if [ $exitCode -eq 0 ]; then
+      rm -f "$stderr_file"
       echo "---------------"
       echo "[任务完成 <$*>]"
       break
+    elif grep -qiE "sudo:.*timed out.*password|sudo:.*password.*timed out|sudo:.*读密码超时" "$stderr_file"; then
+      rm -f "$stderr_file"
+      echo "[检测到 sudo 密码输入超时，停止重试] 错误码: ${exitCode}, 时间: $(date)"
+      return $exitCode
     else
+      rm -f "$stderr_file"
       time=$((time + 1))
       echo "[第 $time 次执行 <$*> 失败, 两秒后重试] 错误码: ${exitCode}, 时间: $(date)"
       sleep 2
@@ -115,4 +124,3 @@ fetch_all_git_repos() {
 
   echo "所有仓库的 fetch 操作已完成！"
 }
-
