@@ -97,3 +97,8 @@ function ipr(){
       fi
   done
 }
+
+
+function install-systemd-service(){
+  "${LIUT_RC_HOME}/sys/linux/install-systemd-service.sh" "$@"
+}
